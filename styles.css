@@ -1,6 +1,6 @@
 
 body{
-  background-image: url('imagenes/background.jpg');
+  background-image: url('images/background.jpg');
   background-size: cover; /* Hace que la imagen cubra todo el body */
   background-position: center; /* Centra la imagen */
   background-repeat: no-repeat; /* Evita que la imagen se repita */
@@ -45,8 +45,12 @@ p {
     /* padding: 0 20px; Espaciado interno para separación */
      
   }
+strong{
+  color: #022330;
+  font-size: 2em;
+  }
 
-  img {
+img {
     float: right;
     border-radius: 5%;
     width: 15%;
