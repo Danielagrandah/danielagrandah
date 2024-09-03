@@ -1,5 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
-body{
+ :root{
+  --primary-color:  rgba(242, 250, 250, 0.09);
+  --second-color: rgba(31, 115, 115, 0.863);
+  --borer-shadow:rgba(0, 0, 0, 0.1);
+  --border-color: rgb(221, 221, 221);
+  --text-color: rgb(0, 0, 0);
+  --shadow-text: rgba(186, 142, 240, 0.209);
+
+ }
+
+*{
+  padding: 0%;  
+  margin: 0%;
+}
+body{ 
   background-image: url('images/background.jpg');
   background-size: cover; /* Hace que la imagen cubra todo el body */
   background-position: center; /* Centra la imagen */
@@ -8,37 +23,94 @@ body{
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 1.5;
-  color: #f2fafa17;
-  justify-content: space-between;
+  color: var(--primary-color);
+  
+}
+
+.nav-pills li a:hover{
+  background-color: var(--second-color);
+}
+.row {
+  margin-left: -10px; /* Ajusta según sea necesario */
+}
+
+main{
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+}
+  
+
+.container-presentation {
+  display: flex; 
+  flex-direction: row;
   align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 50%;
 }
 
 .container-center {
-  display: flow-root;
-  flex-direction: inherit;
-  justify-content: center;
+  display: flex; 
+  flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 100px;
-  background-color: rgba(4, 91, 91, 0.785); /* Fondo blanco para el contenedor */
-  border: 1px solid #dddddd; /* Borde ligero */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
-  border-radius: 10px; /* Bordes redondeados */
-  margin: 50px;
- }
+  width: 100%;
+  background-color: var(--second-color);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  box-sizing: border-box;
+  margin: 10%;
+  padding: 10%;
+  
+ 
+}
 
-h1 {
-    color: #ebc5f2; /* Blanco para el texto */
+ .presentation-buttons{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color:var(--primary-color); /* Color de texto oscuro para legibilidad */
+  font-size: 60%;
+  gap: 5%;
+
+}
+
+ .pensentation-image {
+  mask-image: linear-gradient(
+    black 80%,
+    transparent
+  );
+ 
+  border-radius: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction:row;
+
+}
+
+h1  {
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 1000;
+    font-style: normal;
+    color: var(--text-color); /* Blanco para el texto */
     font-family: 'Palatino', serif; /* Fuente personalizada */
-    text-shadow: 2px 2px 4px rgba(186, 142, 240, 0.209); /* Sombra de texto */
-    margin-right: 20px;
+    text-shadow: 2px 2px 4px var(--shadow-text); /* Sombra de texto */
+    justify-content: left;
     font-size: 4rem;
-    color: #F2FAFA;
+    color: var(--text-color);
             
   }
   
+
 p {
-    color: #bee2ef; /* Color de texto oscuro para legibilidad */
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    color: var(--text-color); /* Color de texto oscuro para legibilidad */
     font-size: 1em;
     margin-right: 20px;
     margin-bottom: 20px;
@@ -46,22 +118,20 @@ p {
      
   }
 strong{
-  color: #022330;
+  color: #ffffff;
   font-size: 2em;
   }
 
-img {
-    float: right;
-    border-radius: 5%;
-    width: 15%;
-    display: flex;
-    flex-direction: column; /* Hace que la imagen y los botones se apilen verticalmente */
-    align-items: center; /* Centra la imagen y los botones horizontalmente */
-  }
+footer{
+  width: auto;
+  display: flexbox;
+  flex-direction: row;
+}
 
-  a{
-    color: #00141f; /* Color de texto oscuro para legibilidad */
-    font-size: 1em;
-  }
 
+
+  @media  (max-width: 1200px){
+
+
+  }
   
