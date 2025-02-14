@@ -1,30 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200..1000&family=Raleway:wght@100..900&display=swap');
 
- :root{
-  --primary-color:  rgba(242, 250, 250, 0.09);
+:root {
+  --primary-color: rgba(242, 250, 250, 0.09);
   --second-color: #1f7373dc;
-  --borer-shadow:rgba(0, 0, 0, 0.1);
-  --border-color:rgb(221, 221, 221);
+  --border-shadow: rgba(0, 0, 0, 0.1);
+  --border-color: rgb(221, 221, 221);
   --text-color: #f5eeee;
   --shadow-text: #ba8ef035;
-
- }
-
-*{
-  padding: 0%;  
-  margin: 0%;
 }
 
-
-
-/* Extra: Responsividad */
-@media (max-width: 768px) {
-  body {
-    font-size: 14px; /* Ajusta tamaño de fuente para pantallas pequeñas */
-    padding: 3em;    /* Reduce el padding */
-  }
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
+/* Fondo animado */
 #my-background {
   position: fixed;
   top: 0;
@@ -33,6 +24,8 @@
   height: 100%;
   z-index: -1;
 }
+
+/* Sidebar */
 .sidebar {
   width: 250px;
   height: 100vh;
@@ -85,7 +78,7 @@
   background-color: #34495e;
 }
 
-/* Estilos para el contenido */
+/* Contenido principal */
 .content {
   margin-left: 250px;
   padding: 20px;
@@ -96,7 +89,7 @@ section {
 }
 
 h1 {
-  color: #f5eeee;
+  color: var(--text-color);
   font-size: 2.5em;
 }
 
@@ -105,7 +98,54 @@ p {
   font-size: 1.2em;
 }
 
-/* Media Queries para hacerlo responsivo */
+/* Imágenes del portafolio */
+.portfolio-img {
+  width: auto;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Footer */
+.footer {
+  background-color: rgba(43, 61, 79, 0.6);
+  color: #ecf0f1;
+  padding: 20px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer p {
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+.social-links {
+  margin-top: 10px;
+}
+
+.social-link {
+  margin: 0 15px;
+  transition: transform 0.3s ease;
+}
+
+.social-link img {
+  width: 30px;
+  height: 30px;
+}
+
+.social-link:hover {
+  transform: scale(1.1);
+}
+
+/* 📌 Responsividad */
 @media (max-width: 768px) {
   .sidebar {
     width: 200px;
@@ -113,6 +153,17 @@ p {
 
   .content {
     margin-left: 200px;
+    padding: 15px;
+  }
+
+  .social-links {
+    display: flex;
+    justify-content: center;
+  }
+
+  .social-link img {
+    width: 25px;
+    height: 25px;
   }
 }
 
@@ -138,61 +189,5 @@ p {
 
   .sidebar-links a {
     padding: 10px 20px;
-  }
-}
-
-/* Estilo del Footer */
-.footer {
-  background-color: #2b3d4f9d;
-  color: #ecf0f1;
-  padding: 20px;
-  text-align: center;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-}
-
-.footer-container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.footer p {
-  margin: 10px 0;
-  font-size: 14px;
-}
-
-.social-links {
-  margin-top: 10px;
-}
-
-.social-link {
-  margin: 0 15px;
-  transition: color 0.3s ease;
-}
-
-.social-link img {
-  width: 30px;
-  height: 30px;
-}
-
-.social-link:hover {
-  color: #3498db;
-}
-
-/* Media Queries para hacerlo responsivo */
-@media (max-width: 768px) {
-  .social-links {
-    display: flex;
-    justify-content: center;
-  }
-
-  .social-link {
-    margin: 0 10px;
-  }
-
-  .social-link img {
-    width: 25px;
-    height: 25px;
   }
 }
