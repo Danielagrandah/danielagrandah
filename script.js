@@ -1,38 +1,14 @@
-// Este código permite mostrar el tooltip solo al hacer clic sobre un año
-
-document.querySelectorAll('.year').forEach(year => {
-    year.addEventListener('click', function() {
-      const tooltip = year.querySelector('.tooltip');
-      
-      // Alternar visibilidad del tooltip
-      tooltip.style.display = tooltip.style.display === 'block' ? 'none' : 'block';
-    });
-  });
-  
-
-  document.addEventListener("DOMContentLoaded", function () {
-    emailjs.init("TU_USER_ID"); // Reemplaza con tu User ID de EmailJS
-
-    document.getElementById("contactForm").addEventListener("submit", function (event) {
-        event.preventDefault();
-
-        const name = document.getElementById("name").value;
-        const email = document.getElementById("email").value;
-        const message = document.getElementById("message").value;
-
-        const templateParams = {
-            from_name: name,
-            from_email: email,
-            message: message
-        };
-
-        emailjs.send("TU_SERVICE_ID", "TU_TEMPLATE_ID", templateParams)
-            .then(response => {
-                document.getElementById("responseMessage").innerText = "¡Mensaje enviado con éxito!";
-                document.getElementById("contactForm").reset();
-            }, error => {
-                document.getElementById("responseMessage").innerText = "Hubo un error, intenta nuevamente.";
-                document.getElementById("responseMessage").style.color = "red";
-            });
+document.addEventListener('DOMContentLoaded', function() {
+    VANTA.WAVES({
+        el: "#vanta",    // El ID del contenedor donde se aplicará el efecto
+        mouseControls: true,    // Activar controles del mouse
+        touchControls: true,    // Activar controles táctiles
+        gyroControls: false,    // Desactivar controles giroscópicos
+        minHeight: 200.00,      // Altura mínima del área
+        minWidth: 200.00,       // Ancho mínimo del área
+        scale: 1.00,            // Escala del efecto
+        scaleMobile: 1.00,      // Escala del efecto en dispositivos móviles
+        color: 0x5788           // Color del efecto (en formato hexadecimal)
     });
 });
+

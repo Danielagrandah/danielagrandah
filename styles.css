@@ -1,214 +1,128 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200..1000&family=Raleway:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Atma:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --primary-color: rgba(242, 250, 250, 0.09);
-  --second-color: #1f7373dc;
-  --border-shadow: rgba(0, 0, 0, 0.1);
+  --primary-color: #0B3948;
+  --second-color: #416165;
+  --third-color: #acb0bd;
+  --four-color: #d0cdd7;
+  --fift-color: #d9dbf1;
+  --six-color:#d9dbf1;
   --border-color: rgb(221, 221, 221);
-  --text-color: #f5eeee;
+  --text-color: #000000;
   --shadow-text: #ba8ef035;
+
 }
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+
 }
 
 /* Fondo animado */
-#my-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
+
+.abril-fatface-regular {
+  font-family: "Abril Fatface", serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
-/* Sidebar */
-.sidebar {
-  width: 250px;
-  height: 100vh;
-  background-color: #2c3e50;
-  padding: 20px;
+h1 {
+  font-size: 70px;
+  font-family: "Abril Fatface", serif;
+  font-style: normal;
+}
+
+h2{
+  font-size: 50px;
+  font-family: "Abril Fatface", serif;
+  font-style: normal;
+}
+
+
+/* Navbar */
+.nav-bar {
+  
+  width: 100%;
+  height: 10vh;
+  padding: 5%;
   position: fixed;
-  top: 0;
-  left: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+
+.welcomeText{
+  width: 100%;
+  height: 100vh;
+  background-color: var(--primary-color);
+  color: var(--fift-color);
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: center;
+  padding: 20%;
+  
 }
 
-.sidebar-header {
-  margin-bottom: 30px;
+#vanta-effect {
+  width: 100%;             /* Hace que el contenedor ocupe el 100% del ancho */
+  height: 100vh;           /* Hace que el contenedor ocupe el 100% de la altura de la ventana */
+  position: absolute;      /* Asegura que el contenedor cubra toda la pantalla */
+  top: 0;
+  left: 0;
+  z-index: -1;             /* Hace que el efecto quede en el fondo detrás del contenido */
+}
+
+
+/*AboutMe*/
+
+.aboutMe{
   width: 100%;
+  height: 100vh;
+  background-color: var(--third-color);
+  color: var(--text-color);
   display: flex;
+  flex-direction: row;
+  align-items: center;
   justify-content: center;
+  gap: 5%;
+  padding: 5%;
 }
 
 .profile-img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.sidebar-links {
-  list-style: none;
-  padding: 0;
-  width: 100%;
-}
-
-.sidebar-links li {
-  margin: 20px 0;
-}
-
-.sidebar-links a {
-  text-decoration: none;
-  color: #ecf0f1;
-  font-size: 18px;
-  text-transform: uppercase;
-  display: block;
-  padding: 10px;
-  transition: background-color 0.3s ease;
-  border-radius: 5px;
-}
-
-.sidebar-links a:hover {
-  background-color: #34495e;
-}
-
-/* Contenido principal */
-.content {
-  margin-left: 250px;
-  padding: 20px;
-}
-
-section {
-  margin-bottom: 40px;
-}
-
-h1 {
-  color: var(--text-color);
-  font-size: 2.5em;
-}
-
-p {
-  color: #7f8c8d;
-  font-size: 1.2em;
+  width: 200px;
+  height: 30vh;
+  border-radius: 100%;
 }
 
 
-/* Contenedor de la línea de tiempo */
-.timeline {
-  display: flex;
-  gap: 30px;
-  position: relative;
-  flex-wrap: wrap; /* Permite que se ajuste en pantallas pequeñas */
-  justify-content: center; /* Centra los items en la línea de tiempo */
-  margin-top: 20px;
-}
 
-/* Estilos para los años */
-.year {
-  position: relative;
-  padding: 12px 20px;
-  background: var(--second-color);
-  color:var(--text-color);
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: bold;
-  text-align: center;
-  transition: transform 0.2s ease-in-out;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.year:hover {
-  transform: scale(1.1);
-}
-
-/* Tooltip oculto por defecto */
-.tooltip {
-  display: none;
-  position: absolute;
-  top: 50px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: white;
-  color: black;
-  padding: 12px;
-  border-radius: 6px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
-  width: 320px;
-  max-width: 90vw; /* Para hacerlos más responsivos */
-  z-index: 10;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out; /* Agregado para suavizar el tooltip */
-}
-
-/* Mostrar tooltip cuando se pasa el cursor */
-.year:hover .tooltip {
-  display: block;
-  visibility: visible;
-  opacity: 1;
-}
-
-/* Eliminar márgenes y paddings innecesarios en el tooltip */
-.tooltip ul {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-/* Mejorar la visibilidad de los elementos de la lista */
-.tooltip li {
-  padding: 6px 0;
-  border-bottom: 1px solid #ddd;
-  font-size: 14px;
-}
-
-.tooltip li:last-child {
-  border-bottom: none;
-}
-
-/* Estilos adicionales para el tooltip (responsive) */
-@media (max-width: 600px) {
-  .tooltip {
-    width: 250px; /* Tooltip más pequeño en pantallas pequeñas */
-  }
-
-  .year {
-    font-size: 14px; /* Reducir tamaño de texto en pantallas pequeñas */
-  }
+.featureProjects{
+ background-color: var(--primary-color);
 }
 
 
-.container {
-  text-align: center;
-  width: 100%;
-  max-width: 900px;
-}
-
-h1 {
-  margin-bottom: 20px;
-}
 
 /* Contenedor de las tarjetas */
 .container-wrapper {
+  height: 100vh;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
   justify-content: center;
+  background-color: var(--primary-color);
+  padding: 5%;
 }
 
 /* Tarjetas individuales */
 .card {
-  background: var(--second-color);
-  width: 280px;
+  background: var(--fift-color);
+  width: 100%;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   overflow: hidden;
   text-align: center;
   padding: 15px;
@@ -216,7 +130,7 @@ h1 {
 
 .card img {
   width: 100%;
-  height: 180px;
+  height: 10px;
   object-fit: cover;
   border-radius: 8px;
 }
@@ -238,67 +152,33 @@ h1 {
 }
 
 
-
-
-
-/*contacto */
-.contact-container {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+.contactMe{
+  background-color: var(--six-color);
+  height: 100vh;
   width: 100%;
-  max-width: 400px;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
 }
 
-h2 {
-  margin-bottom: 15px;
-}
-
-label {
-  display: block;
-  text-align: left;
-  font-weight: bold;
-  margin-top: 10px;
-}
-
-input, textarea {
-  width: 100%;
-  padding: 10px;
-  margin-top: 5px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-button {
-  width: 100%;
-  padding: 10px;
-  background-color: #007bff;
+.expirience{
+  background-color: var(--primary-color);
+  padding: 10% ;
   color: white;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-  margin-top: 15px;
-  border-radius: 5px;
+  height: 100vh;
+  width: 100%;
 }
 
-button:hover {
-  background-color: #0056b3;
-}
 
-#responseMessage {
-  margin-top: 10px;
-  font-weight: bold;
-  color: green;
-}
 
 
 /* Footer */
 .footer {
-  background-color: rgba(43, 61, 79, 0.6);
+  background-color:var(--primary-color);
   color: #ecf0f1;
-  padding: 20px;
+  padding: 2%;
   text-align: center;
   position: fixed;
   bottom: 0;
@@ -334,53 +214,8 @@ button:hover {
 }
 
 /* 📌 Responsividad */
-@media (max-width: 768px) {
-  .sidebar {
-    width: 200px;
-  }
+@media (max-width: 768px) {}
+  
 
-  .content {
-    margin-left: 200px;
-    padding: 15px;
-  }
-
-  .social-links {
-    display: flex;
-    justify-content: center;
-  }
-
-  .social-link img {
-    width: 25px;
-    height: 25px;
-  }
-
-  .portfolio-img {
-    width: auto;
-    
-  }
-}
-
-@media (max-width: 480px) {
-  .sidebar {
-    width: 100%;
-    height: auto;
-    position: relative;
-  }
-
-  .content {
-    margin-left: 0;
-  }
-
-  .sidebar-links {
-    display: flex;
-    justify-content: space-around;
-  }
-
-  .sidebar-links li {
-    margin: 0;
-  }
-
-  .sidebar-links a {
-    padding: 10px 20px;
-  }
-}
+@media (max-width: 480px) {}
+ 
