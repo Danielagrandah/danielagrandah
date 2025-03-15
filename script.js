@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
         minWidth: 200.00,       // Ancho mínimo del área
         scale: 1.00,            // Escala del efecto
         scaleMobile: 1.00,      // Escala del efecto en dispositivos móviles
-        color: 0x5788           // Color del efecto (en formato hexadecimal)
+        color: 0x0B3948           // Color del efecto (en formato hexadecimal)
     });
 });
 

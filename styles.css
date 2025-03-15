@@ -29,7 +29,7 @@
 }
 
 h1 {
-  font-size: 70px;
+  font-size: 60px;
   font-family: "Abril Fatface", serif;
   font-style: normal;
 }
@@ -52,6 +52,21 @@ h2{
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
+}
+
+button-navBar{
+  background-color: var(--four-color);
+  margin: 10px;
+  padding: 10px 40px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;            
+  box-shadow: 0 0 20px #ffffffbb;
+  border-radius: 50px;
+  display: block;
+  
 }
 
 
@@ -82,21 +97,48 @@ h2{
 .aboutMe{
   width: 100%;
   height: 100vh;
-  background-color: var(--third-color);
+  background-color: var(--four-color);
   color: var(--text-color);
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 5%;
   padding: 5%;
 }
 
+.container-aboutMe{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  }
+
 .profile-img {
-  width: 200px;
-  height: 30vh;
+  width: 50%;
+  height: 50vh;
   border-radius: 100%;
 }
+
+
+.btn-grad {background-image: linear-gradient(to right, #16222A 0%, #3A6073  51%, #16222A  100%)}
+.btn-grad {
+   margin: 10px;
+   padding: 10px 40px;
+   text-align: center;
+   text-transform: uppercase;
+   transition: 0.5s;
+   background-size: 200% auto;
+   color: white;            
+   box-shadow: 0 0 20px #ffffffbb;
+   border-radius: 50px;
+   display: block;
+ }
+
+ .btn-grad:hover {
+   background-position: right center; /* change the direction of the change here */
+   color: #fff;
+   text-decoration: none;
+ }
 
 
 
@@ -161,6 +203,22 @@ h2{
   align-items: center;
   justify-content: center;
 
+}
+
+.contac-button {
+  background-color: #d9dbf1;
+  color: #333;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 80px;
+  box-shadow: 3px 3px 10px rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.contac-button:hover {
+  background-color: #c2c4e5;
+  transform: scale(1.05);
 }
 
 .expirience{
